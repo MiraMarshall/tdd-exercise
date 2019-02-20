@@ -54,11 +54,12 @@ describe "Blackjac Score" do
     hand = [2, "King", 3, 2, 3, 2]
 
     # Act
-    if hand.length > 4
-    end
+
     # Assert
-    expect {
-      blackjack_score
-    }.must_raise ArgumentError
+    if hand.length > 5
+      expect {
+        blackjack_score(hand)
+      }.must_raise ArgumentError
+    end
   end
 end
